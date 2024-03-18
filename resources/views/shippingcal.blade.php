@@ -173,11 +173,75 @@ https://www.tooplate.com/view/2127-little-fashion
                     </div>
                 </div>
             </section>
+            <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .comparison-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #f2f2f2;
+        }
+
+        .product-name {
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                width: 100%;
+            }
+        }
+    </style>
             <div id="myPopup" class="popup">
   <!-- Popup content -->
   <div class="popup-content">
     <span class="close">&times;</span>
     <div id="popupData">{{$value}}</div>
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Courses</th>
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>JavaScript</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="product-name">Price</td>
+                <td>$100</td>
+                <td>$120</td>
+                <td>$90</td>
+            </tr>
+            <tr>
+                <td class="product-name">Features</td>
+                <td>Feature X, Feature Y, Feature Z</td>
+                <td>Feature X, Feature Z</td>
+                <td>Feature Y, Feature Z</td>
+            </tr>
+            <tr>
+                <td class="product-name">Rating</td>
+                <td>4.5/5</td>
+                <td>3.8/5</td>
+                <td>4.2/5</td>
+            </tr>
+        </tbody>
+    </table>
   </div>
 </div>
 <style>

@@ -24,6 +24,7 @@ Route::get('/portfolio' , [HomeController::class , 'portfolio']);
 Route::get('/faq' , [HomeController::class , 'faq']);
 Route::get('/pricing' , [HomeController::class , 'pricing']);
 Route::get('/shipping' , [HomeController::class , 'shipping']);
+Route::get('/cart' , [HomeController::class , 'cart']);
 
 Route::middleware(['web'])->group(function () {
 

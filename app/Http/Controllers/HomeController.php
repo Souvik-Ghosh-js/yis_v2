@@ -215,4 +215,8 @@ public function userdashboard()
     public function transaction(){
         return view('admin/transaction');
     }
+    public function cart(){
+        return view('cart');
+    }
+
 }
