@@ -35,7 +35,7 @@
     <div class="page-header m-2">
     <div class="page-title">
     <h4>Your Indian Shop/Cart</h4>
-    <h5>Transaction id : #65565</h5>
+    <h5>Transaction id : {{$trn}}</h5>
     </div>
     </div>
 <div class="card-body">
@@ -46,68 +46,28 @@
 </div>
 <div class="card-body pt-0">
 <div class="totalitem">
-<h4>Total items : 4</h4>
+<h4>Total items : 1</h4>
 </div>
 <div class="product-table">
-<ul class="product-lists">
-<li>
-<div class="productimg">
-<div class="productimgs">
-<img src="assets/img/product/product34.jpg" alt="img">
+    <ul class="product-lists">
+        <li>
+            <div class="productimg">
+                <div class="productimgs">
+                    <img src="{{ $addedProduct->image }}" alt="Product Image">
+                </div>
+                <div class="productcontet">
+                    <h4>{{ $addedProduct->name }}</h4>
+                    <div class="productlinkset">
+                        <h5>{{ $addedProduct->qty }}</h5>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>Rs.{{ $addedProduct->price }}</li>
+        <li><a href="#" class="confirm-text"><img src="assets/img/icons/delete-2.svg" alt="Delete"></a></li>
+    </ul>
 </div>
-<div class="productcontet">
-<h4>Green Nike
-<a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="assets/img/icons/edit-5.svg" alt="img"></a>
-</h4>
-<div class="productlinkset">
-<h5>PT001</h5>
-</div>
-</div>
-</div>
-</li>
-<li>3000.00	</li>
-<li><a class="confirm-text" href="javascript:void(0);"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
-</ul>
-<ul class="product-lists">
-<li>
-<div class="productimg">
-<div class="productimgs">
-<img src="assets/img/product/product35.jpg" alt="img">
-</div>
-<div class="productcontet">
-<h4>Banana
-<a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="assets/img/icons/edit-5.svg" alt="img"></a>
-</h4>
-<div class="productlinkset">
-<h5>PT001</h5>
-</div>
-</div>
-</div>
-</li>
-<li>3000.00	</li>
-<li><a class="confirm-text" href="javascript:void(0);"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
-</ul>
-<ul class="product-lists">
-<li>
-<div class="productimg">
-<div class="productimgs">
-<img src="assets/img/product/product31.jpg" alt="img">
-</div>
-<div class="productcontet">
-<h4>Strawberry
-<a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="assets/img/icons/edit-5.svg" alt="img"></a>
-</h4>
-<div class="productlinkset">
-<h5>PT001</h5>
-</div>
-</div>
-</div>
-</li>
-<li>3000.00	</li>
-<li><a class="confirm-text" href="javascript:void(0);"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
-</ul>
-</div>
-</div>
+
 <div class="split-card">
 </div>
 <div class="card-body pt-0 pb-2 col-lg-8 col-12">
@@ -115,37 +75,66 @@
 <ul>
 <li>
 <h5>Subtotal </h5>
-<h6>55.00$</h6>
+<h6>Rs.{{ $addedProduct->price }}</h6>
 </li>
 <li>
-<h5>Tax </h5>
-<h6>5.00$</h6>
+
 </li>
 <li class="coupon">
     <div class="col-lg-12 col-12 p-2">
-            <div class="row">
-    <div class="col-lg-8 col-12">
-        <select class="form-control form-small select">
-        <option selected="selected">orange</option>
-        <option>white</option>
-        <option>purple</option>
-        </select>
-        </div>
-    <div class="col-lg-4 col-12">
-        <button type="button" class="btn-totallabel m-0" style="outline:none; border: transparent; font-weight: 600">Apply&nbsp;Coupon</button>
+        <div class="row">
+            <div class="col-lg-8 col-12">
+            <select class="form-control form-small select">
+                @foreach($coupons as $coupon)
+                <option value="{{ $coupon->id }}" data-discount="{{ $coupon->discount }}">{{ $coupon->coupon_name }}</option>
+                @endforeach
+            </select>
+            </div>
+            <div class="col-lg-4 col-12">
+                <button type="button" class="btn-totallabel m-0" style="outline:none; border: transparent; font-weight: 600">Apply&nbsp;Coupon</button>
+            </div>
         </div>
     </div>
-        </div>
 </li>
+
 <li class="total-value">
 <h5>Total </h5>
-<h6>60.00$</h6>
+<h6>Rs.{{ $addedProduct->price }}</h6>
 </li>
 </ul>
 </div>
-<button type="button" class="btn-totallabel" style="outline:none; border: transparent; font-weight: 600">
-Checkout &nbsp60.00$
+
+
+
+
+
+<button type="button" class="btn-totallabel" id="totalAmount" style="outline:none; border: transparent; font-weight: 600">
+    Checkout -   Rs. {{ $addedProduct->price}}
 </button>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const couponSelect = document.querySelector('.form-control');
+        const applyCouponBtn = document.querySelector('.btn-totallabel');
+        let totalPrice = parseFloat("{{ $addedProduct->price }}");
+        let totalValueElement = document.querySelector('.total-value h6');
+        let totalAmountElement = document.getElementById('totalAmount');
+        let checkoutButton = document.getElementById('checkoutButton');
+
+        applyCouponBtn.addEventListener('click', function() {
+            const selectedCouponOption = couponSelect.options[couponSelect.selectedIndex];
+            const discount = parseFloat(selectedCouponOption.dataset.discount);
+
+            if (!isNaN(discount)) {
+                const discountedPrice = totalPrice - discount;
+                totalValueElement.textContent = 'Rs.' + discountedPrice.toFixed(2);
+                totalAmountElement.textContent = 'Checkout -   Rs.' + discountedPrice.toFixed(2);
+            } else {
+                alert('Please select a valid coupon.');
+            }
+        });
+    });
+</script>
+
 </div>
 </div>
 </div>

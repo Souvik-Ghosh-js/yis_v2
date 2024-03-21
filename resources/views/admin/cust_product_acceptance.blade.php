@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-<title>Your Indian Shop Product Acceptance</title>
+<title>Your Indian Shop Proof of Purchase</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
@@ -40,7 +40,7 @@
             <div id="sidebar-menu" class="sidebar-menu">
             <ul>
             <li><a href="/admin-dashboard">Assisted Purchase Request</a></li>
-    <li><a href="/product-acceptance">Product Acceptance</a></li>
+    <li><a href="/product-acceptance">Proof of Purchase</a></li>
     <li><a href="/transaction">All Transactions</a></li>
     <li><a href="/admin-products">Products</a></li>
     <li><a href="/countrieslist">Country Details</a></li>
@@ -49,7 +49,7 @@
             <a href="javascript:void(0);"><img src="assets/img/icons/sales1.svg" alt="img"><span> Customer Info</span> <span class="menu-arrow"></span></a>
             <ul>
                 <li><a href="/customer">Customer Informations</a></li>
-            <li><a href="/product-acceptance">Customer Product Acceptance</a></li>
+            <li><a href="/product-acceptance">Customer Proof of Purchase</a></li>
             <li><a href="cust_transaction.html">Customer Transactions</a></li>
             </ul>
             </li>
@@ -69,7 +69,7 @@
 <div class="content">
 <div class="page-header">
 <div class="page-title">
-<h4>Customer Product Acceptance</h4>
+<h4>Customer Proof of Purchase</h4>
 </div>
 </div>
 

@@ -11,5 +11,8 @@ class AddedProduct extends Model
     protected $table = 'added_products';
 
     protected $fillable = ['name', 'price', 'category', 'qty', 'image'];
-
+    public function carts()
+{
+    return $this->hasMany(Cart::class);
+}
 }

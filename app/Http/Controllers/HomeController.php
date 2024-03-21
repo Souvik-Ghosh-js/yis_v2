@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\AddedProduct;
 use App\Models\Coupon;
 use App\Models\User;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -215,8 +216,26 @@ public function userdashboard()
     public function transaction(){
         return view('admin/transaction');
     }
-    public function cart(){
-        return view('cart');
+    public function cart()
+    {
+        $transactionId = session('transaction_id');
+
+        $cartItem = Cart::where('transaction_id', $transactionId)->first();
+
+        if ($cartItem) {
+            $addedProduct = AddedProduct::find($cartItem->product_id);
+            $coupons = Coupon::all(); // Assuming Coupon is your model for coupons
+            return view('cart', ['addedProduct' => $addedProduct, 'coupons' => $coupons , 'trn' =>$transactionId]);
+        }
+
+        return view('empty_cart');
+    }
+
+    public function userproducts(){
+        $addedProducts = AddedProduct::all();
+
+
+        return view('productuser' , ['addedProducts' => $addedProducts]);
     }
 
 }

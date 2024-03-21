@@ -8,6 +8,7 @@ use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\AssistedPurchaseController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::post('/added-products' ,[AssistedPurchaseController::class , 'addedProduc
 Route::post('/add/coupons' ,[ApiController::class , 'addcoupons']);
 Route::post('/clear_user_not', [NotificationController::class , 'clear_user']);
 Route::post('/clear_wm_not', [NotificationController::class , 'clear_wm']);
+Route::post('/add_to_cart', [CartController::class , 'addtoCart']);
 
 });
 Route::post('/add-warehouse' , [WarehouseController::class , 'addwarehouse']);

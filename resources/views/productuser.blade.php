@@ -39,51 +39,26 @@
 <div class="whirly-loader"> </div>
 </div>
 <div class="main-wrappers">
-<nav class="navbar navbar-expand-lg">
-                            <div class="container">
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
+<div class="sidebar" id="sidebar">
+<div class="sidebar-inner slimscroll">
+<div id="sidebar-menu" class="sidebar-menu">
+<ul>
+<li class="active">
+<a href=""><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
+</li>
+<li><a href="/user-add-product">Assisted Purchase</a></li>
+<li><a href="">Indian Shops</a></li>
+<li><a href="">Prohibited Items</a></li>
+<li><a href="/user-products">Products</a></li>
 
-                                <a class="navbar-brand" href="/">
-                                    <strong>Your <span>Indian</span> Shop</strong>
-                                </a>
-
-                                <div class="d-lg-none">
-                                    <a href="/signup-page" ><span style="font-size:15px">Sign In</span></a>
-                                    <!-- <a href="sign-in.html" class="bi-person custom-icon me-3"></a> -->
-                                </div>
-
-                                <div class="collapse navbar-collapse" id="navbarNav">
-                                    <ul class="navbar-nav mx-auto">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="/">Home</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/pricing">Pricing</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/about">About</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/faq">FAQs</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/contact">Contact</a>
-                                        </li>
-                                    </ul>
-
-                                    <div class="d-none d-lg-block">
-                                            <a href="/signup-page" ><span style="font-size:15px">Sign In</span></a>
-                                            <!-- <a href="sign-in.html" class="bi-person custom-icon me-3"></a> -->
-                                        </div>
-                                </div>
-                            </div>
-                        </nav>
+<li><a href="/shipping">Shipping Calc</a></li>
+<li>
+<a href="/purchase-report"><i data-feather="file"></i><span> Wallet</span> </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="page-wrapper">
 <div class="content">
 <div class="row">
@@ -96,6 +71,7 @@
 <div class="tabs_container">
     <div class="tab_content active" data-tab="fruits">
         <div class="row">
+
             @foreach ($addedProducts as $product)
             <div class="col-lg-3 col-sm-6 d-flex">
                 <div class="productset flex-fill">
@@ -104,11 +80,14 @@
                         <h6>Qty: {{ $product->qty }}</h6>
                     </div>
                     <div class="productsetcontent">
-                        <h5>{{ $product->category }}</h5>
-                        <h4>{{ $product->name }}</h4>
-                        <h6>{{ $product->price }}&nbsp <a class="me-3" href="editproduct.html">
-<img src="assets/img/icons/edit.svg" alt="img">
-</a></h6>
+                        <h5><b>{{ $product->category }}</b></h5>
+                        <h2 style="color: red"><b>{{ $product->name }}</b></h2>
+                        <h3>{{ $product->price }}</h3>
+                    <form method="POST" action="/api/add_to_cart">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        <button type="submit" class="btn btn-submit mt-3">Add to Cart <i data-feather="file"></i></button>
+                    </form>
                     </div>
                 </div>
             </div>

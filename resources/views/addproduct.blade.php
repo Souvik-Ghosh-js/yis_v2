@@ -38,17 +38,25 @@
 
         </div>
         <div class="sidebar" id="sidebar">
-            <div class="sidebar-inner slimscroll">
-            <div id="sidebar-menu" class="sidebar-menu">
-            <ul>
-            <li><a href="/user-add-product">Assisted Purchase Request</a></li>
+<div class="sidebar-inner slimscroll">
+<div id="sidebar-menu" class="sidebar-menu">
+<ul>
+<li class="active">
+<a href=""><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
+</li>
+<li><a href="/user-add-product">Assisted Purchase</a></li>
+<li><a href="">Indian Shops</a></li>
+<li><a href="">Prohibited Items</a></li>
+<li><a href="/user-products">Products</a></li>
 
-
-            </li>
-            </ul>
-            </div>
-            </div>
-            </div>
+<li><a href="/shipping">Shipping Calc</a></li>
+<li>
+<a href="/purchase-report"><i data-feather="file"></i><span> Wallet</span> </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="page-wrapper">
 <div class="content">
 <div class="page-header">
@@ -125,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
     uploadedImageNameElement.textContent = "Image uploaded: " + uploadedImageName;
 
     popup.style.display = "block";
-    
+
     // Close the popup after 3 seconds
     setTimeout(function() {
       popup.style.display = "none";

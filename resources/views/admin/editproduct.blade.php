@@ -42,7 +42,7 @@
             <div id="sidebar-menu" class="sidebar-menu">
             <ul>
             <li><a href="/admin-dashboard">Assisted Purchase Request</a></li>
-    <li><a href="/product-acceptance">Product Acceptance</a></li>
+    <li><a href="/product-acceptance">Proof of Purchase</a></li>
     <li><a href="/transaction">All Transactions</a></li>
     <li><a href="/admin-products">Products</a></li>
     <li><a href="/countrieslist">Country Details</a></li>
@@ -51,7 +51,7 @@
             <a href="javascript:void(0);"><img src="assets/img/icons/sales1.svg" alt="img"><span> Customer Info</span> <span class="menu-arrow"></span></a>
             <ul>
                 <li><a href="/customer">Customer Informations</a></li>
-            <li><a href="/product-acceptance">Customer Product Acceptance</a></li>
+            <li><a href="/product-acceptance">Customer Proof of Purchase</a></li>
             <li><a href="cust_transaction.html">Customer Transactions</a></li>
             </ul>
             </li>

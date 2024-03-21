@@ -12,18 +12,18 @@
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        
+
         <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
-        
+
         <link rel="stylesheet" href="assets/css/animate.css">
-        
+
         <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
-        
+
         <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
-        
+
         <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
         <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-        
+
         <link rel="stylesheet" href="assets/css/style.css">
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        
+
 .pricing__table {
     display: flex;
     justify-content: center;
@@ -235,7 +235,7 @@
       }
     }
   }
-  
+
   h1 {
     text-align: center;
     margin-top: 60px;
@@ -246,9 +246,9 @@
   }
     </style>
     </head>
-    
+
     <body>
-        
+
 <div id="global-loader">
 <div class="whirly-loader"> </div>
 </div>
@@ -270,7 +270,7 @@
     <div id="sidebar-menu" class="sidebar-menu">
     <ul>
     <li><a href="index.html">Assisted Purchase Request</a></li>
-    <li><a href="product_acceptance.html">Product Acceptance</a></li>
+    <li><a href="product_acceptance.html">Proof of Purchase</a></li>
     <li><a href="transaction.html">All Transactions</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="countrieslist.html">Country Details</a></li>
@@ -279,7 +279,7 @@
     <a href="javascript:void(0);"><img src="assets/img/icons/sales1.svg" alt="img"><span> Customer Info</span> <span class="menu-arrow"></span></a>
     <ul>
         <li><a href="customer.html">Customer Informations</a></li>
-    <li><a href="cust_product_acceptance.html">Customer Product Acceptance</a></li>
+    <li><a href="cust_product_acceptance.html">Customer Proof of Purchase</a></li>
     <li><a href="cust_transaction.html">Customer Transactions</a></li>
     </ul>
     </li>
@@ -290,13 +290,13 @@
     <li><a href="editpurchase.html">Add Warehouse</a></li>
     </ul>
     </li>
-    
+
     <li><a href="admin-pricing.html">Plans</a></li>
     </ul>
     </div>
     </div>
     </div>
-    
+
 <div class="page-wrapper">
     <section class="section-padding m-4">
   <div class="pricing__table">
@@ -430,7 +430,7 @@
       var parent = button.parentNode.parentNode;
       // Get all spans inside the parent element
       var spans = parent.querySelectorAll('span');
-      
+
       // Replace spans with input fields
       spans.forEach(function(span) {
         var input = document.createElement('input');
@@ -438,13 +438,13 @@
         input.value = span.textContent;
         span.parentNode.replaceChild(input, span);
       });
-      
+
       // Replace edit button with save button
       var saveButton = document.createElement('button');
       saveButton.textContent = "Save";
       saveButton.classList.add('saveButton');
       parent.querySelector('.editButton').replaceWith(saveButton);
-      
+
       // Add event listener to save button
       saveButton.addEventListener('click', function() {
         // Get all input fields inside the parent element
@@ -455,13 +455,13 @@
           span.textContent = input.value;
           input.parentNode.replaceChild(span, input);
         });
-        
+
         // Replace save button with edit button
         var editButton = document.createElement('button');
         editButton.textContent = "Edit";
         editButton.classList.add('editButton');
         saveButton.replaceWith(editButton);
-        
+
         // Add event listener to new edit button
         editButton.addEventListener('click', function() {
           // Call the edit function again to convert spans back to input fields

@@ -24,7 +24,6 @@ Route::get('/portfolio' , [HomeController::class , 'portfolio']);
 Route::get('/faq' , [HomeController::class , 'faq']);
 Route::get('/pricing' , [HomeController::class , 'pricing']);
 Route::get('/shipping' , [HomeController::class , 'shipping']);
-Route::get('/cart' , [HomeController::class , 'cart']);
 
 Route::middleware(['web'])->group(function () {
 
@@ -37,15 +36,18 @@ Route::get('/verify-email/{token}', [ApiController::class , 'verifyEmail']);
 
 
 Route::middleware(['auth:web'])->group(function () {
+Route::get('/cart' , [HomeController::class , 'cart']);
+
 Route::get('/user-dashboard' , [HomeController::class , 'userdashboard']);
 Route::get('/warehouse-dashboard' , [HomeController::class , 'warehousedashboard']);
 Route::get('/edit-product/{product_id}' , [HomeController::class , 'editproduct']);
 Route::get('/purchase-report' , [HomeController::class , 'purchasereport']);
 Route::get('/user-profile' , [HomeController::class , 'userprofile']);
 Route::get('/product/detail' , [HomeController::class , 'product_detail']);
-Route::get('/product' , [HomeController::class , 'product']);
+Route::get('/product' , [HomeController::class , 'products']);
 Route::post('/logout', [ApiController::class, 'logout']);
 Route::get('/user-add-product' , [HomeController::class , 'useraddproduct']);
+Route::get('/user-products' , [HomeController::class , 'userproducts']);
 
 //admin-routes
 Route::get('/add-customer' , [HomeController::class , 'addcustomer']);

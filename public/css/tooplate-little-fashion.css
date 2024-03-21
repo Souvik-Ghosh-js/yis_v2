@@ -8,7 +8,7 @@ https://www.tooplate.com/view/2127-little-fashion
 
 
 /*---------------------------------------
-  CUSTOM PROPERTIES ( VARIABLES )             
+  CUSTOM PROPERTIES ( VARIABLES )
 -----------------------------------------*/
 :root {
   --white-color:                #FFFFFF;
@@ -49,12 +49,12 @@ html {
 
 body {
     background: var(--white-color);
-    font-family: var(--body-font-family);    
+    font-family: var(--body-font-family);
     position: relative;
 }
 
 /*---------------------------------------
-  TYPOGRAPHY               
+  TYPOGRAPHY
 -----------------------------------------*/
 
 h2,
@@ -111,7 +111,7 @@ p {
   font-weight: var(--font-weight-light);
 }
 
-a, 
+a,
 button {
   touch-action: manipulation;
   transition: all 0.3s;
@@ -136,7 +136,7 @@ a:hover {
 }
 
 /*---------------------------------------
-  CUSTOM LINK               
+  CUSTOM LINK
 -----------------------------------------*/
 .custom-link {
   color: var(--p-color);
@@ -175,7 +175,7 @@ strong {
 }
 
 /*---------------------------------------
-  PRE LOADER               
+  PRE LOADER
 -----------------------------------------*/
 .preloader {
   position: fixed;
@@ -218,7 +218,7 @@ strong {
 }
 
 /*---------------------------------------
-  CUSTOM BUTTON & ICON              
+  CUSTOM BUTTON & ICON
 -----------------------------------------*/
 .custom-btn {
   background: var(--dark-color);
@@ -278,7 +278,7 @@ strong {
 }
 
 /*---------------------------------------
-  DIV SEPARATOR               
+  DIV SEPARATOR
 -----------------------------------------*/
 .div-separator {
   position: relative;
@@ -308,7 +308,7 @@ strong {
 }
 
 /*---------------------------------------
-  FULL IMAGE               
+  FULL IMAGE
 -----------------------------------------*/
 .full-image-img {
   display: block;
@@ -327,7 +327,7 @@ strong {
 }
 
 /*---------------------------------------
-  NAVIGATION               
+  NAVIGATION
 -----------------------------------------*/
 .navbar {
   background: var(--white-color);
@@ -396,7 +396,7 @@ strong {
   transform: translateY(10px);
 }
 
-.navbar .nav-link.active::after, 
+.navbar .nav-link.active::after,
 .navbar .nav-link:hover::after {
   opacity: 1;
   -webkit-transform: translateY(0px);
@@ -409,7 +409,7 @@ strong {
   color: var(--primary-color);
 }
 
-.nav-link:focus, 
+.nav-link:focus,
 .nav-link:hover {
   color: var(--p-color);
 }
@@ -481,7 +481,7 @@ strong {
 }
 
 /*---------------------------------------
-  SITE HEADER              
+  SITE HEADER
 -----------------------------------------*/
 .site-header {
   background-color: var(--section-bg-color);
@@ -510,7 +510,7 @@ strong {
 }
 
 /*---------------------------------------
-  SLICK SLIDESHOW               
+  SLICK SLIDESHOW
 -----------------------------------------*/
 @media (min-width: 992px) {
   .slick-slideshow {
@@ -648,7 +648,7 @@ strong {
   background: var(--white-color);
 }
 /*---------------------------------------
-  How it Work              
+  How it Work
 -----------------------------------------*/
 .about .box{
   display: flex;
@@ -685,7 +685,7 @@ strong {
   width:50%;
 }
 /*---------------------------------------
-  Featured              
+  Featured
 -----------------------------------------*/
 @-webkit-keyframes scroll {
   0% {
@@ -753,7 +753,7 @@ strong {
       object-fit: cover;
       transition: transform 1000ms;
     }
-    
+
     .featured ul {
       list-style: none;
       margin: 0;
@@ -774,7 +774,7 @@ strong {
       position: relative;
       overflow: hidden;
     }
-    
+
     .featured figure::after {
       content: '';
       position: absolute;
@@ -788,7 +788,7 @@ strong {
       transform: scale(2);
       transition: opacity 300ms;
     }
-    
+
     .featured figcaption {
       position: absolute;
       top: 0;
@@ -806,38 +806,38 @@ strong {
       opacity: 0;
       transition: opacity 600ms, transform 600ms;
     }
-    
+
     .featured a:is(:hover, :focus) figure::after {
       opacity: 1;
     }
-    
+
     .featured a:is(:hover, :focus) figcaption {
       opacity: 1;
       transition: opacity 600ms;
     }
-    
+
     @media (prefers-reduced-motion: no-preference) {
       .featured figcaption {
         transform: translate3d(0, 2rem, 0);
       }
-      
+
       .featured figure::after {
         border-radius: 50%;
         opacity: 1;
         transform: scale(0);
         transition: transform 900ms;
       }
-      
+
       .featured a:is(:hover, :focus) figure::after {
         transform: scale(2.5);
       }
-    
+
       .featured a:is(:hover, :focus) figcaption {
         opacity: 1;
         transform: translate3d(0, 0, 0);
         transition: opacity 600ms 400ms, transform 600ms 400ms;
       }
-    
+
       .featured  a:is(:hover, :focus) img {
         transform: scale(1.2);
       }
@@ -901,7 +901,7 @@ strong {
   height: 100%;
 }
 /*---------------------------------------
-  CUSTOM CIRCLE IMAGES               
+  CUSTOM CIRCLE IMAGES
 -----------------------------------------*/
 
 .custom-circle-image {
@@ -916,7 +916,7 @@ strong {
 }
 
 /*---------------------------------------
-  TESTIMONIAL               
+  TESTIMONIAL
 -----------------------------------------*/
 .testimonial .container {
   display: grid;
@@ -1016,7 +1016,7 @@ strong {
 }
 #contact-details {
     flex-wrap: wrap;
-} 
+}
  .testimonial .container {
       display: flex;
       flex-direction: column;
@@ -1078,7 +1078,7 @@ strong {
 }
 
 /*---------------------------------------
-  SECTION               
+  SECTION
 -----------------------------------------*/
 section {
   content-visibility: auto;
@@ -1091,7 +1091,7 @@ section {
 }
 
 /*---------------------------------------
-  ABOUT               
+  ABOUT
 -----------------------------------------*/
 .about .nav-pills .nav-item {
   width: 100%;
@@ -1107,7 +1107,7 @@ section {
 }
 
 .about .nav-pills .nav-link:hover,
-.about .nav-pills .nav-link.active, 
+.about .nav-pills .nav-link.active,
 .about .nav-pills .show>.nav-link {
   background: transparent;
   border-left-color: var(--primary-color);
@@ -1115,7 +1115,7 @@ section {
 }
 
 /*---------------------------------------
-  FAQ ACCORDION               
+  FAQ ACCORDION
 -----------------------------------------*/
 .accordion-item {
   background-color: transparent;
@@ -1157,7 +1157,7 @@ button:focus:not(:focus-visible) {
 }
 
 /*---------------------------------------
-  TEAM MEMBERS               
+  TEAM MEMBERS
 -----------------------------------------*/
 .team {
   background:#a4ffd3;
@@ -1218,7 +1218,7 @@ button:focus:not(:focus-visible) {
 }
 
 /*---------------------------------------
-  SKILL - PROGRESS BAR               
+  SKILL - PROGRESS BAR
 -----------------------------------------*/
 .skill-thumb strong {
   display: inline-block;
@@ -1244,7 +1244,7 @@ button:focus:not(:focus-visible) {
 }
 
 /*---------------------------------------
-  PRODUCT               
+  PRODUCT
 -----------------------------------------*/
 .front-product {
   background: var(--section-bg-color);
@@ -1319,7 +1319,7 @@ button:focus:not(:focus-visible) {
 }
 
 /*---------------------------------------
-  CONTACT              
+  CONTACT
 -----------------------------------------*/
 .contact-info {
   padding: 40px;
@@ -1350,7 +1350,7 @@ button:focus:not(:focus-visible) {
 }
 
 /*---------------------------------------
-  SITE FOOTER               
+  SITE FOOTER
 -----------------------------------------*/
 .site-footer {
   background: var(--dark-color);
@@ -1391,7 +1391,7 @@ button:focus:not(:focus-visible) {
 }
 
 /*---------------------------------------
-  SOCIAL ICON               
+  SOCIAL ICON
 -----------------------------------------*/
 .floating{
   position: fixed;
@@ -1432,13 +1432,13 @@ button:focus:not(:focus-visible) {
 }
 
 /*---------------------------------------
-  RESPONSIVE STYLES               
+  RESPONSIVE STYLES
 -----------------------------------------*/
 @media screen and (max-width: 1200px) {
   h1 {
     font-size: 62px;
   }
- 
+
 }
 
 @media screen and (max-width: 991px) {

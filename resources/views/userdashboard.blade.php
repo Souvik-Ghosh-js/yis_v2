@@ -84,13 +84,13 @@
 
 <li class="nav-item dropdown has-arrow main-drop">
     <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
-    <span class="user-img"><img src="assets/img/profiles/avatar-17.jpg" alt="">
+    <span class="user-img"><img src="assets/img/profiles/image.png" alt="">
     <span class="status online"></span></span>
     </a>
     <div class="dropdown-menu menu-drop-user">
     <div class="profilename">
     <div class="profileset">
-    <span class="user-img"><img src="assets/img/profiles/avatar-17.jpg" alt="">
+    <span class="user-img"><img src="assets/img/profiles/image.png" alt="">
     <span class="status online"></span></span>
     <div class="profilesets">
     <h6>User Name</h6>
@@ -127,6 +127,8 @@
 <li><a href="/user-add-product">Assisted Purchase</a></li>
 <li><a href="">Indian Shops</a></li>
 <li><a href="">Prohibited Items</a></li>
+<li><a href="/user-products">Products</a></li>
+
 <li><a href="/shipping">Shipping Calc</a></li>
 <li>
 <a href="/purchase-report"><i data-feather="file"></i><span> Wallet</span> </a>
@@ -187,9 +189,7 @@
     <div class="content">
         <div class="page-header">
         <div class="page-title">
-        <h2>Product
-            Acceptance
-            Request</h2>
+        <h2>Proof of purchase</h2>
         </div>
         </div>
 <form method="post" action="/api/PAR" enctype="multipart/form-data">
@@ -220,6 +220,18 @@
         </div>
         </div>
         </div>
+        <div class="col-lg-12">
+        <div class="form-group">
+        <label> Proof of purchase</label>
+        <div class="image-upload">
+  <input type="file" name="image" id="image">
+  <div class="image-uploads">
+    <img src="assets/img/icons/upload.svg" alt="img">
+    <h4>Drag and drop a file to upload</h4>
+  </div>
+</div>
+        </div>
+        </div>
         </div>
         <div class="row">
         <div class="col-lg-12">
@@ -232,13 +244,7 @@
         </div>
         </form>
         </div>
-        <div class="image-upload">
-  <input type="file" name="image" id="image">
-  <div class="image-uploads">
-    <img src="assets/img/icons/upload.svg" alt="img">
-    <h4>Drag and drop a file to upload</h4>
-  </div>
-</div>
+
 
 <!-- The popup -->
 <div id="myPopup" class="popup">
@@ -361,6 +367,8 @@ document.addEventListener("DOMContentLoaded", function() {
                             @csrf
                             <button class="badges bg-lightred" style="color:#fff; outline:none; border: none; padding: 10px 15px; text-decoration: none;">Request Return</button>
                         </form>
+                        <button class="badges bg-lightgreen" style="color:#fff; outline:none; border: none; padding: 10px 15px; text-decoration: none;" onclick="showConfirmation1('Address', '{{ $product->product_id }}')">Dispatch</button>
+
                         @elseif ($product->status === 'Accepted' || $product->status === 'Request for Return')
                             <button class="badges bg-lightgreen" style="color:#fff; outline:none; border: none; padding: 10px 15px; text-decoration: none;" onclick="showConfirmation1('Address', '{{ $product->product_id }}')">Dispatch</button>
                     @else
